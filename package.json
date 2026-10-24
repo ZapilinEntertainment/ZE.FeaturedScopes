@@ -1,0 +1,7 @@
+{
+  "name": "com.zapilinentertainment.featuredscopes",
+  "version": "3.0.0",
+  "displayName": "ZE.FeaturedScopes",
+  "description": "Provides module feature system based on VContainer dependency resolve",
+  "author": "Zapilin Entertainment"
+}
