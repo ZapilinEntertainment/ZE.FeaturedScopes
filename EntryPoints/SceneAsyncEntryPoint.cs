@@ -18,6 +18,7 @@ namespace ZE.FeaturedScopes
 
         public override async Awaitable<LifetimeScope> StartAsync(CancellationToken cancellation)
         {
+            // restart protection
             if (_resourceBinder == null)
                 _resourceBinder = await LoadResourcesAsync(cancellation);
 

@@ -16,7 +16,10 @@ namespace ZE.FeaturedScopes
         public override async Awaitable<LifetimeScope> StartAsync(CancellationToken cancellation)
         {
             var binder = await LoadResourcesAsync(cancellation);
-            return _currentScope.CreateChild<SessionScope>(builder => binder.Register(builder));
+            if (binder == null)
+                return _currentScope.CreateChild<SessionScope>();
+            else
+                return _currentScope.CreateChild<SessionScope>(builder => binder.Register(builder));
         }
 
         protected override Awaitable<IResourceBinder> LoadResourcesAsync(ISessionAsyncResourceLoader resourceLoader) =>
